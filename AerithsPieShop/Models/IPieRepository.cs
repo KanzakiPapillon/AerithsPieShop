@@ -1,9 +1,9 @@
 ﻿namespace AerithsPieShop.Models
 {
-    public class IPieRepository
+    public interface IPieRepository
     {
-    IEnumerable<Pie> AllPies { get; }
-    IEnumerable<Pie> PiesOfTheWeek { get; }
-    Pie GetPieById(int pieId);
+        IEnumerable<Pie> AllPies { get; }
+        IEnumerable<Pie> PiesOfTheWeek { get; }
+        Pie? GetPieById(int pieId);
     }
 }
