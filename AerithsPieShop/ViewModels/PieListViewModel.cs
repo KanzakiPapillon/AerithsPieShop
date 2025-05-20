@@ -1,7 +1,7 @@
 ﻿using AerithsPieShop.Models;
 
 namespace AerithsPieShop.ViewModels
-{ 
+{
     public class PieListViewModel
     {
         public IEnumerable<Pie> Pies { get; }

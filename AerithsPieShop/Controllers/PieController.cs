@@ -2,7 +2,7 @@
 using AerithsPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AerithsPieShop.Controllers
+namespace BethanysPieShop.Controllers
 {
     public class PieController : Controller
     {
@@ -18,9 +18,10 @@ namespace AerithsPieShop.Controllers
         public IActionResult List()
         {
             //ViewBag.CurrentCategory = "Cheese cakes";
+
             //return View(_pieRepository.AllPies);
-            PieListViewModel piesListViewModel = new PieListViewModel
-                (_pieRepository.AllPies, "Cheese cakes");
+
+            PieListViewModel piesListViewModel = new PieListViewModel(_pieRepository.AllPies, "Cheese cakes");
             return View(piesListViewModel);
         }
     }
