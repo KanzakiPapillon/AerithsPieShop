@@ -1,14 +1,21 @@
 using AerithsPieShop.Models;
+using Microsoft.EntityFrameworkCore;
 
 //Create the Web Application Builder
 var builder = WebApplication.CreateBuilder(args);
 
 //Register Services for Dependency Injection 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPieRepository, PieRepository>();
 
 //Add MVC Controllers with Views 
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AerithsPieShopDbContext>(options =>
+{
+options.UseSqlServer(
+    builder.Configuration["ConnectionStrings:AerithsPieShopDbContextConnection"]);
+
+});
 
 // Build the Application 
 var app = builder.Build();
