@@ -7,8 +7,8 @@ namespace AerithsPieShop.Models
         public AerithsPieShopDbContext(DbContextOptions<AerithsPieShopDbContext> options) : base(options)
         {
         }
-        public DbSet<Category> Categories { get; set; } = default!;
-        public DbSet<Pie> Pies { get; set; } = default!;
+        public DbSet<Category> Categories { get; set; } 
+        public DbSet<Pie> Pies { get; set; } 
 
         
     }

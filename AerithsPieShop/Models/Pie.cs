@@ -1,11 +1,8 @@
-﻿using AerithsPieShop.Models;
-
-namespace AerithsPieShop.Models
+﻿namespace AerithsPieShop.Models
 {
     public class Pie
     {
         public int PieId { get; set; }
-
         public string Name { get; set; } = string.Empty;
         public string? ShortDescription { get; set; }
         public string? LongDescription { get; set; }
