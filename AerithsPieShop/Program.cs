@@ -11,11 +11,8 @@ builder.Services.AddScoped<IPieRepository, PieRepository>();
 //Add MVC Controllers with Views 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AerithsPieShopDbContext>(options =>
-{
-options.UseSqlServer(
-    builder.Configuration["ConnectionStrings:AerithsPieShopDbContextConnection"]);
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AerithsPieShopDbContext")));
 
-});
 
 // Build the Application 
 var app = builder.Build();
@@ -29,4 +26,5 @@ if (app.Environment.IsDevelopment())
 }
 //Set Up Routing 
 app.MapDefaultControllerRoute();
+DbInitializer.Seed(app);
 app.Run();
